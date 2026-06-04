@@ -163,6 +163,11 @@ h2{
   object-fit:cover;
 }
 
+.skill:hover{
+  transform:translateY(-3px);
+  transition:.3s;
+}
+
 /* =========================
    LIST
 ========================= */
