@@ -75,3 +75,33 @@ window.addEventListener("load", () => {
     }, 600);
   }, 900);
 });
+
+//////////////////////////////
+// ⑤ smooth header（追加）
+//////////////////////////////
+
+const header = document.querySelector("header");
+
+let scrollY = 0;
+let current = 0;
+
+function animate() {
+  if (!header) return;
+
+  current += (scrollY - current) * 0.1;
+
+  const progress = Math.min(current / 200, 1);
+
+  header.style.transform = `
+    scale(${1 - progress * 0.05})
+    translateY(${progress * -4}px)
+  `;
+
+  requestAnimationFrame(animate);
+}
+
+window.addEventListener("scroll", () => {
+  scrollY = window.scrollY;
+});
+
+animate();
