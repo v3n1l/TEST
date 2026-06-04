@@ -246,7 +246,13 @@ img{
   gap:20px;
 }
 
-.work-item,
+.work-item{
+  display:block;
+  font-size:14px;
+  letter-spacing:.08em;
+  transition:.3s ease;
+}
+
 .product-list a{
   text-decoration:none;
   color:#222;
@@ -255,7 +261,31 @@ img{
   transition:.3s;
 }
 
-.work-item:hover,
+/* ホバー時：色変化＋ちょい動き */
+.work-item:hover{
+  color:rgba(106,171,210,.95);
+  transform:translateX(6px);
+}
+
+/* 下線もいい感じに変化 */
+.work-item{
+  position:relative;
+}
+
+.work-item::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0%;
+  height:1px;
+  background:rgba(106,171,210,.8);
+  transition:.3s ease;
+}
+
+.work-item:hover::after{
+  width:100%;
+}
 .product-list a:hover{
   padding-left:10px;
 }
