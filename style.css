@@ -19,6 +19,8 @@ body::before{
     linear-gradient(to bottom, rgba(106,171,210,.12) 1px, transparent 1px);
 
   background-size:24px 24px;
+  
+  background: linear-gradient(120deg, #fff, #f5f7ff);
 
   opacity:.4;
   pointer-events:none;
