@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
-
+　const progress = Math.min(window.scrollY / 200, 1);
   if (!header) return;
 
   if (window.scrollY > 50) {
