@@ -18,22 +18,53 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 //////////////////////////////
-// ② headerスクロール縮小
+// ② スクロール値管理（統合）
 //////////////////////////////
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
-  if (!header) return;
+let scrollY = 0;
 
-  if (window.scrollY > 50) {
-    header.classList.add("shrink");
-  } else {
-    header.classList.remove("shrink");
-  }
+window.addEventListener("scroll", () => {
+  scrollY = window.scrollY;
 });
 
 
 //////////////////////////////
-// ③ IntersectionObserver
+// ③ smooth header（rAF統合）
+//////////////////////////////
+const header = document.querySelector("header");
+
+let current = 0;
+
+function animate() {
+  if (!header) return;
+
+  current += (scrollY - current) * 0.1;
+
+  const progress = Math.min(current / 200, 1);
+
+  // shrink代替（統合）
+  if (scrollY > 50) {
+    header.classList.add("shrink");
+  } else {
+    header.classList.remove("shrink");
+  }
+
+  // ガラス濃度
+  header.style.background = `rgba(255,255,255,${0.45 + progress * 0.25})`;
+
+  // transformアニメ
+  header.style.transform = `
+    scale(${1 - progress * 0.05})
+    translateY(${progress * -4}px)
+  `;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+
+//////////////////////////////
+// ④ IntersectionObserver
 //////////////////////////////
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
@@ -50,7 +81,7 @@ document.querySelectorAll(".fade").forEach(el => {
 
 
 //////////////////////////////
-// ④ loadingアニメ + 終了処理
+// ⑤ loadingアニメ
 //////////////////////////////
 window.addEventListener("load", () => {
   const loading = document.getElementById("loading");
@@ -58,14 +89,12 @@ window.addEventListener("load", () => {
 
   if (!loading) return;
 
-  // タイル崩壊アニメ
   tiles.forEach((tile, i) => {
     setTimeout(() => {
       tile.classList.add("hide");
     }, i * 15);
   });
 
-  // 全体フェードアウト
   setTimeout(() => {
     loading.style.opacity = "0";
     loading.style.transition = "0.6s";
@@ -75,33 +104,3 @@ window.addEventListener("load", () => {
     }, 600);
   }, 900);
 });
-
-//////////////////////////////
-// ⑤ smooth header（追加）
-//////////////////////////////
-
-const header = document.querySelector("header");
-
-let scrollY = 0;
-let current = 0;
-
-function animate() {
-  if (!header) return;
-
-  current += (scrollY - current) * 0.1;
-
-  const progress = Math.min(current / 200, 1);
-
-  header.style.transform = `
-    scale(${1 - progress * 0.05})
-    translateY(${progress * -4}px)
-  `;
-
-  requestAnimationFrame(animate);
-}
-
-window.addEventListener("scroll", () => {
-  scrollY = window.scrollY;
-});
-
-animate();
