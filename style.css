@@ -73,9 +73,9 @@ header{
   display:flex;
   justify-content:space-between;
 
-  background:rgba(255,255,255,.72);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
+  background:rgba(255,255,255,.4);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
 
   border:1px solid rgba(106,171,210,.12);
   border-radius:20px;
