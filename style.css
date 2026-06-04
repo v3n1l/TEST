@@ -77,14 +77,14 @@ header{
   -webkit-backdrop-filter:blur(14px);
 
   border:1px solid rgba(106,171,210,.18);
-  border-radius:20px;
+  border-radius:28px;
 
   box-shadow:
     0 8px 30px rgba(0,0,0,.06),
     inset 0 1px 0 rgba(255,255,255,.6);
 
   z-index:100;
-  transition:0.4s ease;
+  transition:0.4s ease, border-radius 0.4s ease;
 }
 
 /* light noise */
