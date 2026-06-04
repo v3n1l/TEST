@@ -95,6 +95,53 @@ padding:16px 0;
 border-bottom:1px solid #ddd;
 transition:.3s;
 }
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
+
+.product-card{
+  text-decoration:none;
+  color:#222;
+  background:#fff;
+  border:1px solid #e5e5e5;
+  overflow:hidden;
+  transition:0.3s ease;
+}
+
+.product-card:hover{
+  transform:translateY(-4px);
+}
+
+.product-card img{
+  width:100%;
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+  display:block;
+}
+
+.product-info{
+  padding:16px;
+}
+
+.product-info h3{
+  margin-bottom:8px;
+  font-size:1rem;
+  font-weight:500;
+}
+
+.product-info p{
+  color:#666;
+  font-size:0.9rem;
+  margin-bottom:12px;
+}
+
+.product-info span{
+  color:#6AABD2;
+  font-size:0.9rem;
+}
+
 
 .work-item:hover,
 .product-list a:hover{
