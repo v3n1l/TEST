@@ -134,30 +134,19 @@ nav a{
   font-size:12px;
   letter-spacing:.18em;
 
-  padding:8px 12px;
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:999px;
+  padding:6px 0;
 
-  background:rgba(255,255,255,.4);
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-
-  transition:.3s ease;
+  background:transparent;
+  border:none;
 
   opacity:0;
   animation:navFade .6s ease forwards;
+  transition:.3s ease;
 }
-
-/* stagger */
-nav a:nth-child(1){animation-delay:.1s;}
-nav a:nth-child(2){animation-delay:.2s;}
-nav a:nth-child(3){animation-delay:.3s;}
-nav a:nth-child(4){animation-delay:.4s;}
 
 nav a:hover{
   transform:translateY(-2px);
-  border-color:rgba(106,171,210,.3);
-  background:rgba(255,255,255,.7);
+  color:rgba(106,171,210,.9);
 }
 
 /* animation */
