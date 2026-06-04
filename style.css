@@ -59,7 +59,7 @@ body::before{
 }
 
 /* =========================
-   HEADER（整理済み）
+   HEADER
 ========================= */
 header{
   position:fixed;
@@ -67,11 +67,13 @@ header{
   left:24px;
   right:24px;
 
-  padding:18px 32px;
+  padding:18px 40px;
 
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:40px;
+
   background:rgba(255,255,255,.4);
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
@@ -80,7 +82,7 @@ header{
   border-radius:28px;
 
   box-shadow:
-    0 8px 30px rgba(0,0,0,.06),
+    0 10px 40px rgba(0,0,0,.08),
     inset 0 1px 0 rgba(255,255,255,.6);
 
   z-index:100;
@@ -105,8 +107,8 @@ header::before{
 
 /* shrink */
 header.shrink{
-  padding:14px 32px;
-  border-radius:28px;
+  padding:10px 36px;
+  border-radius:22px;
   background:rgba(255,255,255,.75);
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
@@ -117,17 +119,17 @@ header.shrink .logo{
   font-size:12px;
 }
 
+/* logo */
 .logo{
   font-size:14px;
-  letter-spacing:.2em; 
+  letter-spacing:.2em;
   display:flex;
   align-items:center;
-  height:100%;
   line-height:1;
 }
 
 /* =========================
-   NAV（完全整理）
+   NAV
 ========================= */
 nav{
   display:flex;
@@ -139,7 +141,7 @@ nav a{
   color:#333;
 
   font-size:12px;
-  letter-spacing:.18em;
+  letter-spacing:.12em;
 
   padding:6px 0;
 
@@ -190,11 +192,9 @@ section{
 .about-content img{
   width:120px;
   height:120px;
-  max-width:120px;
-  max-height:120px;
   object-fit:cover;
   flex-shrink:0;
-  border-radius:8px; /* おまけ：少し今っぽく */
+  border-radius:8px;
 }
 
 .profile-3d{
@@ -210,10 +210,9 @@ section{
   justify-content:center;
 }
 
-img{
-  display:block;
-}
-
+/* =========================
+   SKILLS
+========================= */
 .skills{
   margin-top:60px;
 }
@@ -254,15 +253,8 @@ img{
 }
 
 /* =========================
-   LIST
+   WORK
 ========================= */
-.work-list,
-.product-list{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-}
-
 .work-item{
   display:block;
   font-size:14px;
@@ -270,15 +262,6 @@ img{
   transition:.3s ease;
 }
 
-.product-list a{
-  text-decoration:none;
-  color:#222;
-  padding:16px 0;
-  border-bottom:1px solid #ddd;
-  transition:.3s;
-}
-
-/* ホバー時：色変化＋ちょい動き */
 .work-item:hover{
   color:rgba(106,171,210,.95);
   transform:translateX(6px);
@@ -302,7 +285,6 @@ img{
   color:#222;
 }
 
-/* 画像を完全に正方形固定 */
 .product-card img{
   width:100%;
   aspect-ratio:1/1;
@@ -317,12 +299,10 @@ img{
   opacity:.85;
 }
 
-/* 名前 */
 .product-name{
   font-size:12px;
   letter-spacing:.08em;
   color:#333;
-  text-align:left;
 }
 
 /* =========================
@@ -343,7 +323,15 @@ img{
    RESPONSIVE
 ========================= */
 @media(max-width:768px){
-  header{padding:20px;}
-  .about-content{flex-direction:column;}
-  .product-grid{grid-template-columns:repeat(2,1fr);}
+  header{
+    padding:14px 20px;
+  }
+
+  .about-content{
+    flex-direction:column;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
