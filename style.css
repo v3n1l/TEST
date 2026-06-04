@@ -94,6 +94,22 @@ header{
    transition:0.4s ease;
 }
 
+header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(106,171,210,.08), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(106,171,210,.06), transparent 45%);
+
+  mix-blend-mode: overlay;
+  opacity:.6;
+}
+
+
 /* 👇スクロール後の状態 */
 header.shrink{
   padding:12px 24px;
