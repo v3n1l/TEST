@@ -200,14 +200,27 @@ section{
 .profile-3d{
   width:120px;
   height:120px;
-  border-radius:12px;
+
+  border-radius:50%; /* ←丸窓 */
   overflow:hidden;
+
   background:rgba(255,255,255,.4);
   backdrop-filter:blur(8px);
+
   border:1px solid rgba(106,171,210,.15);
+
   display:flex;
   align-items:center;
   justify-content:center;
+}
+
+/* model-viewerを“中で少し小さく”して四角感残す */
+.profile-3d model-viewer{
+  width:150%;
+  height:150%;
+
+  transform:scale(0.75); /* ←ここがポイント */
+  transform-origin:center;
 }
 
 /* =========================
@@ -317,6 +330,15 @@ section{
 .fade.show{
   opacity:1;
   transform:translateY(0);
+}
+
+footer{
+  text-align:center;
+  padding:80px 24px;
+
+  font-size:12px;
+  letter-spacing:.2em;
+  color:#888; /* My Skillと同じトーン */
 }
 
 /* =========================
