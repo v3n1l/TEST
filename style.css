@@ -14,7 +14,27 @@ overflow-x:hidden;
 }
 
 :root{
---accent:#6AABD2;
+  --tile-gap:1px;
+  --tile-unit:23px;
+  --tile-fill:#f7f7f7;
+}
+
+.tile-overlay{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fill,22px);
+
+  grid-auto-rows:22px;
+
+  gap:1px;
+}
+
+.tile-overlay > div{
+  background:#f7f7f7;
 }
 
 
