@@ -12,7 +12,7 @@ body{
 }
 
 /* =========================
-   BACKGROUND GRID（統一版）
+   BACKGROUND GRID
 ========================= */
 body::before{
   content:"";
@@ -59,7 +59,7 @@ body::before{
 }
 
 /* =========================
-   HEADER
+   HEADER（整理済み）
 ========================= */
 header{
   position:fixed;
@@ -76,24 +76,18 @@ header{
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
 
-  border: 1px solid rgba(106,171,210,.18);
+  border:1px solid rgba(106,171,210,.18);
   border-radius:20px;
+
   box-shadow:
     0 8px 30px rgba(0,0,0,.06),
     inset 0 1px 0 rgba(255,255,255,.6);
-    position: fixed;
-  top:10px;
-  left:10px;
-  right:10px;
-
-  border-radius:20px;
-
 
   z-index:100;
-  box-shadow:0 0 0 1px rgba(106,171,210,.08);
-   transition:0.4s ease;
+  transition:0.4s ease;
 }
 
+/* light noise */
 header::before{
   content:"";
   position:absolute;
@@ -105,12 +99,11 @@ header::before{
     radial-gradient(circle at 20% 20%, rgba(106,171,210,.08), transparent 40%),
     radial-gradient(circle at 80% 80%, rgba(106,171,210,.06), transparent 45%);
 
-  mix-blend-mode: overlay;
+  mix-blend-mode:overlay;
   opacity:.6;
 }
 
-
-/* 👇スクロール後の状態 */
+/* shrink */
 header.shrink{
   padding:12px 24px;
   border-radius:14px;
@@ -126,12 +119,14 @@ header.shrink .logo{
   letter-spacing:.2em;
 }
 
+/* =========================
+   NAV（完全整理）
+========================= */
 nav{
   display:flex;
   gap:14px;
 }
 
-/* 通常リンク → UIタグ化 */
 nav a{
   text-decoration:none;
   color:#333;
@@ -153,80 +148,22 @@ nav a{
   animation:navFade .6s ease forwards;
 }
 
-/* アニメ遅延（順番に出る） */
+/* stagger */
 nav a:nth-child(1){animation-delay:.1s;}
 nav a:nth-child(2){animation-delay:.2s;}
 nav a:nth-child(3){animation-delay:.3s;}
 nav a:nth-child(4){animation-delay:.4s;}
 
-/* hover */
 nav a:hover{
   transform:translateY(-2px);
   border-color:rgba(106,171,210,.3);
   background:rgba(255,255,255,.7);
 }
 
-/* 出現アニメ */
+/* animation */
 @keyframes navFade{
-  from{
-    opacity:0;
-    transform:translateY(6px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* 通常リンク → UIタグ化 */
-nav a{
-  text-decoration:none;
-  color:#333;
-
-  font-size:12px;
-  letter-spacing:.18em;
-
-  padding:8px 12px;
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:999px;
-
-  background:rgba(255,255,255,.4);
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-
-  transition:.3s ease;
-
-  opacity:0;
-  animation:navFade .6s ease forwards;
-}
-
-/* アニメ遅延（順番に出る） */
-nav a:nth-child(1){animation-delay:.1s;}
-nav a:nth-child(2){animation-delay:.2s;}
-nav a:nth-child(3){animation-delay:.3s;}
-nav a:nth-child(4){animation-delay:.4s;}
-
-/* hover */
-nav a:hover{
-  transform:translateY(-2px);
-  border-color:rgba(106,171,210,.3);
-  background:rgba(255,255,255,.7);
-}
-
-/* 出現アニメ */
-@keyframes navFade{
-  from{
-    opacity:0;
-    transform:translateY(6px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-nav a:hover{
-  color:var(--accent);
+  from{opacity:0; transform:translateY(6px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
 /* =========================
@@ -245,25 +182,8 @@ section{
   justify-content:center;
 }
 
-.hero h1{
-  font-size:clamp(2rem,5vw,4rem);
-  font-weight:300;
-}
-
-.hero p{
-  margin-top:12px;
-  color:#777;
-}
-
-h2{
-  margin-bottom:40px;
-  font-size:1rem;
-  font-weight:500;
-  text-transform:uppercase;
-}
-
 /* =========================
-   ABOUT
+   ABOUT / SKILLS
 ========================= */
 .about-content{
   display:flex;
@@ -276,6 +196,7 @@ h2{
   height:120px;
   object-fit:cover;
 }
+
 .skills{
   margin-top:60px;
 }
@@ -298,11 +219,11 @@ h2{
   padding:8px 12px;
   border:1px solid rgba(0,0,0,.08);
   border-radius:999px;
+
   color:#333;
   background:rgba(255,255,255,.5);
   backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-  transition:.3s;
+
   opacity:0;
   animation:fadeIn .6s ease forwards;
 }
@@ -312,20 +233,7 @@ h2{
 .skills-list span:nth-child(3){animation-delay:.3s;}
 
 @keyframes fadeIn{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-.skills-list span:hover{
-  transform:translateY(-2px);
-  border-color:rgba(106,171,210,.3);
-}
-
-.skill:hover{
-  transform:translateY(-3px);
-  transition:.3s;
+  to{opacity:1; transform:translateY(0);}
 }
 
 /* =========================
@@ -353,7 +261,7 @@ h2{
 }
 
 /* =========================
-   PRODUCT GRID（修正）
+   PRODUCT GRID
 ========================= */
 .product-grid{
   display:grid;
@@ -363,61 +271,14 @@ h2{
 }
 
 .product-card{
-  position:relative;
+  width:100%;
   display:block;
-  width:100%; /* ←修正ポイント */
   text-decoration:none;
   color:white;
 }
 
-.product-card img{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  transition:.3s;
-}
-
-.product-card:hover img{
-  transform:scale(1.03);
-  opacity:.85;
-  filter:brightness(.7);
-}
-
-.product-name{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  opacity:0;
-  transition:.3s;
-  color:white;
-  text-shadow:0 0 8px rgba(0,0,0,.5);
-  z-index:2;
-}
-
-.product-card:hover .product-name{
-  opacity:1;
-}
-
 /* =========================
-   CONTACT
-========================= */
-.contact-links{
-  display:flex;
-  gap:20px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer{
-  padding:80px 0;
-  text-align:center;
-  color:#888;
-}
-
-/* =========================
-   FADE IN
+   FADE
 ========================= */
 .fade{
   opacity:0;
@@ -434,15 +295,7 @@ footer{
    RESPONSIVE
 ========================= */
 @media(max-width:768px){
-  header{
-    padding:20px;
-  }
-
-  .about-content{
-    flex-direction:column;
-  }
-
-  .product-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
+  header{padding:20px;}
+  .about-content{flex-direction:column;}
+  .product-grid{grid-template-columns:repeat(2,1fr);}
 }
