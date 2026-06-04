@@ -82,6 +82,14 @@ header{
 
   z-index:100;
   box-shadow:0 0 0 1px rgba(106,171,210,.08);
+   transition:0.4s ease;
+}
+
+/* 👇スクロール後の状態 */
+header.shrink{
+  padding:12px 24px;
+  border-radius:14px;
+  background:rgba(255,255,255,.85);
 }
 
 .logo{
