@@ -92,6 +92,10 @@ header.shrink{
   background:rgba(255,255,255,.85);
 }
 
+header.shrink .logo{
+  font-size:12px;
+}
+
 .logo{
   font-size:14px;
   letter-spacing:.2em;
