@@ -106,7 +106,7 @@ header::before{
 /* shrink */
 header.shrink{
   padding:8px 16px;
-  border-radius:12px;
+  border-radius:28px;
   background:rgba(255,255,255,.75);
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
