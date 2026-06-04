@@ -1,6 +1,6 @@
-/* =========================
-   ① loadingタイル生成
-========================= */
+//////////////////////////////
+// ① loadingタイル生成
+//////////////////////////////
 window.addEventListener("DOMContentLoaded", () => {
   const grid = document.getElementById("loading-grid");
   if (!grid) return;
@@ -16,9 +16,12 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
+//////////////////////////////
+// ② headerスクロール縮小
+//////////////////////////////
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
-　const progress = Math.min(window.scrollY / 200, 1);
   if (!header) return;
 
   if (window.scrollY > 50) {
@@ -29,9 +32,9 @@ window.addEventListener("scroll", () => {
 });
 
 
-/* =========================
-   ② IntersectionObserver
-========================= */
+//////////////////////////////
+// ③ IntersectionObserver
+//////////////////////////////
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -46,9 +49,9 @@ document.querySelectorAll(".fade").forEach(el => {
 });
 
 
-/* =========================
-   ③ loadingアニメ + 終了処理（統合版）
-========================= */
+//////////////////////////////
+// ④ loadingアニメ + 終了処理
+//////////////////////////////
 window.addEventListener("load", () => {
   const loading = document.getElementById("loading");
   const tiles = document.querySelectorAll(".tile");
