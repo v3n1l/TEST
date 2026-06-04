@@ -1,16 +1,38 @@
 // ① loadingタイル生成（最初にやる）
 window.addEventListener("DOMContentLoaded", () => {
-  const loading = document.getElementById("loading");
+  const grid = document.getElementById("loading-grid");
 
-  if (!loading) return;
+  const cols = 12;
+  const rows = 20;
 
-  for (let i = 0; i < 100; i++) {
-    const div = document.createElement("div");
-    div.className = "tile";
-    loading.appendChild(div);
+  const count = cols * rows;
+
+  for(let i = 0; i < count; i++){
+    const tile = document.createElement("div");
+    tile.className = "tile";
+    grid.appendChild(tile);
   }
 });
 
+window.addEventListener("load", () => {
+  const loading = document.getElementById("loading");
+  const tiles = document.querySelectorAll(".tile");
+
+  tiles.forEach((tile, i) => {
+    setTimeout(() => {
+      tile.classList.add("hide");
+    }, i * 15); // ←ここが“気持ちよさ”
+  });
+
+  setTimeout(() => {
+    loading.style.opacity = "0";
+    loading.style.transition = "0.6s";
+
+    setTimeout(() => {
+      loading.remove();
+    }, 600);
+  }, 800);
+});
 
 // ② IntersectionObserver
 const observer = new IntersectionObserver((entries) => {
