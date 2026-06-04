@@ -162,6 +162,52 @@ h2{
   height:120px;
   object-fit:cover;
 }
+.skills{
+  margin-top:60px;
+}
+
+.skills h3{
+  font-size:12px;
+  letter-spacing:.2em;
+  color:#888;
+  margin-bottom:20px;
+}
+
+.skills-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px 10px;
+}
+
+.skills-list span{
+  font-size:13px;
+  padding:8px 12px;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:999px;
+  color:#333;
+  background:rgba(255,255,255,.5);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  transition:.3s;
+  opacity:0;
+  animation:fadeIn .6s ease forwards;
+}
+
+.skills-list span:nth-child(1){animation-delay:.1s;}
+.skills-list span:nth-child(2){animation-delay:.2s;}
+.skills-list span:nth-child(3){animation-delay:.3s;}
+
+@keyframes fadeIn{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.skills-list span:hover{
+  transform:translateY(-2px);
+  border-color:rgba(106,171,210,.3);
+}
 
 .skill:hover{
   transform:translateY(-3px);
