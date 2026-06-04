@@ -267,29 +267,6 @@ img{
   transform:translateX(6px);
 }
 
-/* 下線もいい感じに変化 */
-.work-item{
-  position:relative;
-}
-
-.work-item::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-4px;
-  width:0%;
-  height:1px;
-  background:rgba(106,171,210,.8);
-  transition:.3s ease;
-}
-
-.work-item:hover::after{
-  width:100%;
-}
-.product-list a:hover{
-  padding-left:10px;
-}
-
 /* =========================
    PRODUCT GRID
 ========================= */
