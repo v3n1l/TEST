@@ -63,15 +63,15 @@ body::before{
 ========================= */
 header{
   position:fixed;
-  top:10px;
-  left:10px;
-  right:10px;
+  top:16px;
+  left:24px;
+  right:24px;
 
-  padding:24px 48px;
+  padding:18px 32px;
 
   display:flex;
   justify-content:space-between;
-
+  align-items:center;
   background:rgba(255,255,255,.4);
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
@@ -105,7 +105,7 @@ header::before{
 
 /* shrink */
 header.shrink{
-  padding:8px 16px;
+  padding:14px 32px;
   border-radius:28px;
   background:rgba(255,255,255,.75);
   backdrop-filter:blur(18px);
@@ -119,7 +119,11 @@ header.shrink .logo{
 
 .logo{
   font-size:14px;
-  letter-spacing:.2em;
+  letter-spacing:.2em; 
+  display:flex;
+  align-items:center;
+  height:100%;
+  line-height:1;
 }
 
 /* =========================
