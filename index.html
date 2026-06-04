@@ -60,7 +60,20 @@ PERO
 
 <div class="about-content">
 
-  <img src="images/profile.jpg" alt="profile">
+<div class="profile-3d">
+
+  <model-viewer
+    src="models/profile.glb"
+    auto-rotate
+    rotation-per-second="30deg"
+    camera-controls
+    disable-zoom
+    shadow-intensity="1"
+    style="width:120px;height:120px;">
+  </model-viewer>
+　<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+</div>
 
   <div>
 
