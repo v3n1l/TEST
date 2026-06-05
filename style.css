@@ -67,6 +67,37 @@ body::before{
 }
 
 /* =========================
+   TYPOGRAPHY
+========================= */
+
+h1{
+  font-size:48px;
+  font-weight:300;
+  letter-spacing:.08em;
+  line-height:1.2;
+  color:rgba(106,171,210,.95);
+}
+
+h2{
+  font-size:12px;
+  font-weight:400;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#888;
+
+  margin-bottom:40px;
+}
+
+.work-title,
+.skills h3{
+  font-size:12px;
+  font-weight:400;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#888;
+}
+
+/* =========================
    HEADER
 ========================= */
 header{
