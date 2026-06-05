@@ -228,6 +228,18 @@ section{
 .about-content p{
   line-height:1.8;
 }
+
+.profile-name{
+  font-size:32px;
+  font-weight:200;
+  letter-spacing:.18em;
+  line-height:1;
+
+  color:rgba(106,171,210,.9);
+
+  margin-bottom:16px;
+}
+
 .profile-3d{
   width:160px;
   height:160px;
