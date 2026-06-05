@@ -228,11 +228,12 @@ section{
   margin-top:60px;
 }
 
-.skills h3{
+.skills h3,
+.work-title{
   font-size:12px;
   letter-spacing:.2em;
   color:#888;
-  margin-bottom:20px;
+  font-weight:400;
 }
 
 .skills-list{
@@ -374,10 +375,8 @@ footer{
 }
 
 .work-title{
-  font-size:12px;
-  letter-spacing:.2em;
-  color:#888;
   margin-bottom:20px;
+}
 
   font-weight:400;
   text-transform:uppercase;
