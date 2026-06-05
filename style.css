@@ -142,6 +142,24 @@ header::before{
   opacity:.6;
 }
 
+@media(max-width:768px){
+
+  .logo{
+    white-space:nowrap;
+    font-size:11px;
+    letter-spacing:.15em;
+  }
+
+  nav{
+    gap:10px;
+  }
+
+  nav a{
+    font-size:11px;
+  }
+
+}
+
 /* shrink */
 header.shrink{
   padding:10px 36px;
