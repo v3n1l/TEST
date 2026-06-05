@@ -456,16 +456,22 @@ section{
   display:grid;
 
   grid-template-columns:
-    repeat(4, max-content);
+    repeat(4, 160px);
 
   justify-content:center;
 
-  gap:14px 20px;
+  gap:14px 16px;
 }
 
 .skills-list span{
   font-size:13px;
+
+  width:160px;
+
+  text-align:center;
+
   padding:8px 12px;
+
   border:1px solid rgba(0,0,0,.08);
   border-radius:999px;
 
