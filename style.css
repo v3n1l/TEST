@@ -264,7 +264,6 @@ section{
 ========================= */
 
 .skills{
-  margin-top:60px;
   margin-top:80px;
 }
 
@@ -288,8 +287,15 @@ section{
 
 .skills-list{
   display:grid;
-  grid-template-columns:repeat(4, 160px);
+  grid-template-columns:repeat(4, 1fr);
+
+  gap:14px;
+
+  grid-template-columns:
+  repeat(4, 160px);
+
   justify-content:center;
+
   gap:16px;
 
   max-width:760px;
