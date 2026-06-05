@@ -360,6 +360,7 @@ footer{
   }
 }
 
+
 /* =========================
    package.html
 ========================= */
@@ -376,6 +377,7 @@ footer{
 
 .work-title{
   margin-bottom:20px;
+  color:#888;
 }
 
   font-weight:400;
