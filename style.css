@@ -228,28 +228,35 @@ section{
 .profile-info{
   display:flex;
   flex-direction:column;
+  justify-content:center;
 }
 
 .profile-info p{
-  line-height:1.8;
+  font-size:15px;
+  line-height:1.9;
   color:#444;
 }
+
 .profile-role{
   font-size:12px;
-  letter-spacing:.25em;
+  letter-spacing:.18em;
   text-transform:uppercase;
-  color:#888;
-  margin-bottom:20px;
+
+   color:rgba(106,171,210,.8);
+
+  margin-bottom:28px;
 }
 
 .profile-name{
-  font-size:40px;
+  font-size:42px;
   font-weight:200;
-  letter-spacing:.12em;
-  color:rgba(106,171,210,.9);
+  letter-spacing:.08em;
+  line-height:1;
+
+  color:#222;
+
   margin-bottom:8px;
 }
-
 
 .about-content p{
   line-height:1.8;
