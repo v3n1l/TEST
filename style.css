@@ -230,25 +230,26 @@ section{
   flex-direction:column;
 }
 
+.profile-info p{
+  line-height:1.8;
+  color:#444;
+}
 .profile-role{
-  font-size:11px;
-  letter-spacing:.22em;
+  font-size:12px;
+  letter-spacing:.25em;
   text-transform:uppercase;
-  color:rgba(106,171,210,.75);
-
-  margin-bottom:10px;
+  color:#888;
+  margin-bottom:20px;
 }
 
 .profile-name{
-  font-size:32px;
+  font-size:40px;
   font-weight:200;
-  letter-spacing:.18em;
-  line-height:1;
-
+  letter-spacing:.12em;
   color:rgba(106,171,210,.9);
-
-  margin-bottom:16px;
+  margin-bottom:8px;
 }
+
 
 .about-content p{
   line-height:1.8;
