@@ -225,8 +225,18 @@ section{
   align-items:center;
 }
 
-.about-content p{
-  line-height:1.8;
+.profile-info{
+  display:flex;
+  flex-direction:column;
+}
+
+.profile-role{
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(106,171,210,.75);
+
+  margin-bottom:10px;
 }
 
 .profile-name{
@@ -239,6 +249,11 @@ section{
 
   margin-bottom:16px;
 }
+
+.about-content p{
+  line-height:1.8;
+}
+
 
 .profile-3d{
   width:160px;
