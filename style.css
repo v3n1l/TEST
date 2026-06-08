@@ -593,7 +593,7 @@ footer{
 
 .work-images img:hover{
   transform:translateY(-2px);
-
+  color:rgba(106,171,210,.9);
   box-shadow:
     0 8px 24px rgba(106,171,210,.18);
 
