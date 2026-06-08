@@ -106,6 +106,35 @@ window.addEventListener("load", () => {
 });
 
 // =========================
+// CURSOR
+// =========================
+
+const glow = document.querySelector('.cursor-glow');
+
+let mouseX = 0;
+let mouseY = 0;
+let currentX = 0;
+let currentY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function animate(){
+  // ぬるっと追従（遅延）
+  currentX += (mouseX - currentX) * 0.12;
+  currentY += (mouseY - currentY) * 0.12;
+
+  glow.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+
+// =========================
 // LIGHTBOX
 // =========================
 
