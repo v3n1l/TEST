@@ -573,22 +573,40 @@ footer{
   overflow-x:auto; /* 画面小さい時も崩れない */
 }
 
+.img-wrap{
+  position:relative;
+
+  width:calc(33.333% - 8px);
+  flex-shrink:0;
+
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.img-wrap::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:rgba(106,171,210,.0);
+
+  transition:.25s ease;
+
+  pointer-events:none;
+}
+
+
+
 /* 画像サイズ統一 */
 .work-images img{
-  width:calc(33.333% - 8px);
-
+  width:100%;
   aspect-ratio:1/1;
   object-fit:cover;
 
-  border-radius:8px;
-  flex-shrink:0;
+  display:block;
 
-  cursor:pointer;
-
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease,
-    opacity .25s ease;
+  transition:.25s ease;
 }
 
 .work-images img:hover{
@@ -603,6 +621,11 @@ footer{
     0 10px 30px rgba(106,171,210,.25);
 
   opacity:.9;
+}
+
+.img-wrap:hover::after{
+  background:rgba(106,171,210,.16);
+  backdrop-filter:blur(1px);
 }
 
 /* 区切り線 */
