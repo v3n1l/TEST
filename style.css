@@ -206,6 +206,46 @@ nav a:hover{
 }
 
 /* =========================
+   CURSOR
+========================= */
+.cursor-glow{
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+
+  pointer-events:none;
+  z-index:9998;
+
+  /* 青い“光の塊” */
+  background:radial-gradient(circle,
+    rgba(106,171,210,.35) 0%,
+    rgba(106,171,210,.18) 35%,
+    rgba(106,171,210,.08) 60%,
+    rgba(106,171,210,0) 75%
+  );
+
+  /* ガウスっぽさ */
+  filter:blur(18px);
+
+  /* 最初は見えない */
+  opacity:0;
+
+  transform:translate(-50%, -50%);
+  transition:opacity .3s ease;
+}
+
+/* マウス動いたら出す用 */
+body:hover .cursor-glow{
+  opacity:1;
+}
+
+
+/* =========================
    LAYOUT
 ========================= */
 section{
