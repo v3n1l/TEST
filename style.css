@@ -589,7 +589,7 @@ footer{
   position:absolute;
   inset:0;
 
-  background:rgba(106,171,210,.0);
+  background:rgba(106,171,210,.10);
 
   transition:.25s ease;
 
@@ -610,17 +610,17 @@ footer{
 }
 
 .work-images img:hover{
-  transform:translateY(-2px);
+ transform:translateY(-3px);
 
   filter:
     brightness(1.02)
     saturate(.75);
 
   box-shadow:
-    0 0 0 1px rgba(106,171,210,.35),
-    0 10px 30px rgba(106,171,210,.25);
+    0 0 0 1px rgba(106,171,210,.25),
+    0 12px 32px rgba(106,171,210,.18);
 
-  opacity:.9;
+  opacity:.95;
 }
 
 .img-wrap:hover::after{
