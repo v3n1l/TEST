@@ -483,8 +483,24 @@ footer{
    RESPONSIVE
 ========================= */
 @media(max-width:768px){
+
   header{
-    padding:14px 20px;
+    padding:14px 16px;
+    gap:16px;
+  }
+
+  .logo{
+    font-size:10px;
+    letter-spacing:.08em;
+  }
+
+  nav{
+    gap:8px;
+  }
+
+  nav a{
+    font-size:10px;
+    letter-spacing:.05em;
   }
 
   .about-content{
@@ -494,6 +510,7 @@ footer{
   .product-grid{
     grid-template-columns:repeat(2,1fr);
   }
+
 }
 
 
