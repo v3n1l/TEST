@@ -583,19 +583,26 @@ footer{
   overflow:hidden;
 }
 
+/* ベースのオーバーレイ */
 .img-wrap::after{
   content:"";
-
   position:absolute;
-  inset:0;
+  top:50%;
+  left:50%;
+  width:140%;
+  height:140%;
+  transform:translate(-50%, -50%) scale(0.6);
+
+  border-radius:50%;
 
   background:rgba(106,171,210,.10);
+  backdrop-filter:blur(0px);
 
-  transition:.25s ease;
+  opacity:0;
+  transition:.35s ease;
 
   pointer-events:none;
 }
-
 
 
 /* 画像サイズ統一 */
@@ -623,9 +630,13 @@ footer{
   opacity:.95;
 }
 
+/* hoverで“丸く出てくる” */
 .img-wrap:hover::after{
+  opacity:1;
+  transform:translate(-50%, -50%) scale(1);
+
   background:rgba(106,171,210,.16);
-  backdrop-filter:blur(1px);
+  backdrop-filter:blur(4px);
 }
 
 /* 区切り線 */
