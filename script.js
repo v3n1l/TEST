@@ -126,11 +126,8 @@ if(lightbox){
 
   });
 
-lightbox.addEventListener('click', () => {
-  lightbox.classList.remove('show');
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('show');
+  });
 
-  setTimeout(() => {
-    lightboxImg.src = '';
-  }, 250);
-});
 }
