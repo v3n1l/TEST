@@ -568,12 +568,6 @@ footer{
 
   opacity:.95;
 }
-.work-images img:hover{
-  opacity:.9;
-
-  box-shadow:
-    0 8px 24px rgba(106,171,210,.18);
-}
 
 /* 区切り線 */
 .work-desc{
