@@ -585,33 +585,48 @@ footer{
   top:50%;
   left:50%;
 
-  width:140px;
-  height:140px;
+  width:160px;
+  height:160px;
 
-  transform:translate(-50%, -50%);
+  transform:translate(-50%, -50%) scale(0.9);
 
   border-radius:50%;
 
-  /* 中心は薄く、外に向かって濃く */
-  background:radial-gradient(circle,
-    rgba(106,171,210,.05) 0%,
-    rgba(106,171,210,.10) 35%,
-    rgba(106,171,210,.18) 70%,
-    rgba(106,171,210,.22) 100%
+  /* すりガラス本体 */
+  background:rgba(106,171,210,.12);
+
+  /* 中心は濃く・外側は自然に消える */
+  -webkit-mask-image:radial-gradient(circle,
+    rgba(0,0,0,1) 35%,
+    rgba(0,0,0,.6) 55%,
+    rgba(0,0,0,0) 75%
   );
 
-  /* ガウスっぽい“にじみ” */
-  filter:blur(6px);
+  mask-image:radial-gradient(circle,
+    rgba(0,0,0,1) 35%,
+    rgba(0,0,0,.6) 55%,
+    rgba(0,0,0,0) 75%
+  );
 
-  /* 外側だけシャープ感残す */
+  /* ガラス感 */
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+
+  /* ふちのにじみ */
   box-shadow:
     0 0 0 1px rgba(106,171,210,.12),
-    0 0 25px rgba(106,171,210,.18);
+    0 10px 30px rgba(106,171,210,.10);
 
   opacity:0;
-  transition:.4s ease;
+  transition:.45s ease;
 
   pointer-events:none;
+}
+
+/* hover時：ふわっと“出現” */
+.img-wrap:hover::after{
+  opacity:1;
+  transform:translate(-50%, -50%) scale(1);
 }
 
 
@@ -621,12 +636,6 @@ footer{
   aspect-ratio:1/1;
   object-fit:cover;
   display:block;
-}
-
-/* hoverで“ほどける” */
-.img-wrap:hover::after{
-  opacity:1;
-  filter:blur(3px);
 }
 
 /* 区切り線 */
