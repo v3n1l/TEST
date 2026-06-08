@@ -555,9 +555,7 @@ footer{
 .work-title{
   font-size:16px;
   font-weight:400;
-
   color:#888;
-
   letter-spacing:.08em;
   margin-bottom:24px;
 }
@@ -578,22 +576,33 @@ footer{
   overflow:hidden;
 }
 
-/* 円形オーバーレイ */
+/* =========================
+   円形オーバーレイ（じゅわっと版）
+========================= */
 .img-wrap::after{
   content:"";
   position:absolute;
   top:50%;
   left:50%;
 
-  width:120px;
-  height:120px;
+  width:130px;
+  height:130px;
 
   transform:translate(-50%, -50%);
 
   border-radius:50%;
 
-  background:rgba(106,171,210,.10);
-  backdrop-filter:blur(0px);
+  /* 中心のガラス */
+  background:rgba(106,171,210,.14);
+
+  /* ここがフチの“じゅわっ” */
+  box-shadow:
+    0 0 0 1px rgba(106,171,210,.15),
+    0 0 18px rgba(106,171,210,.18),
+    0 0 40px rgba(106,171,210,.10);
+
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
 
   opacity:0;
   transition:.35s ease;
@@ -601,29 +610,24 @@ footer{
   pointer-events:none;
 }
 
-
 /* 画像サイズ統一 */
 .work-images img{
   width:100%;
   aspect-ratio:1/1;
   object-fit:cover;
   display:block;
-  transition:.25s ease;
 }
 
-/* hoverで“丸く出てくる” */
+/* hoverで出現 */
 .img-wrap:hover::after{
   opacity:1;
-  background:rgba(106,171,210,.16);
-  backdrop-filter:blur(4px);
 }
 
 /* 区切り線 */
 .work-desc{
   margin-top:20px;
-
   padding-bottom:28px;
-  margin-bottom:36px; /* 追加 */
+  margin-bottom:36px;
 
   border-bottom:1px solid rgba(0,0,0,.12);
 
@@ -631,6 +635,7 @@ footer{
   line-height:1.9;
   color:#444;
 }
+
 
 /* =========================
    LIGHTBOX
