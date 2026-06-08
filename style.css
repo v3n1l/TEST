@@ -645,7 +645,9 @@ footer{
   position:fixed;
   inset:0;
 
-  background:rgba(0,0,0,.85);
+  background:rgba(255,255,255,.35);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
 
   display:flex;
   justify-content:center;
@@ -654,27 +656,29 @@ footer{
   opacity:0;
   visibility:hidden;
 
-  transition:opacity .25s ease;
+  transition:opacity .25s ease, backdrop-filter .25s ease;
 
   z-index:9999;
 }
 
+/* 出現時 */
 #lightbox.show{
   opacity:1;
   visibility:visible;
 }
 
+/* 画像 */
 #lightbox img{
   max-width:95%;
   max-height:95%;
 
-  border-radius:12px;
+  border-radius:14px;
 
   transform:scale(.95);
-  transition:transform .25s ease;
+  transition:transform .25s ease, box-shadow .25s ease;
 
   box-shadow:
-    0 20px 60px rgba(0,0,0,.4);
+    0 20px 60px rgba(0,0,0,.15);
 }
 
 #lightbox.show img{
