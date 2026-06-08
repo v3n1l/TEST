@@ -575,7 +575,7 @@ footer{
 
 .img-wrap{
   position:relative;
-
+  cursor: pointer;
   width:calc(33.333% - 8px);
   flex-shrink:0;
 
