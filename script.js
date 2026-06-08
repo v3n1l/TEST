@@ -215,7 +215,7 @@ window.addEventListener("load", () => {
 // =========================
 // CURSOR
 // =========================
-window.addEventListener("DOMContentLoaded", () => {
+
 const glow = document.querySelector('.cursor-glow');
 
 let mouseX = 0;
@@ -223,29 +223,22 @@ let mouseY = 0;
 let currentX = 0;
 let currentY = 0;
 
-// マウス取得
 document.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 });
 
-// アニメーション
-function cursorAnimate() {
+function animateCursor(){
   currentX += (mouseX - currentX) * 0.12;
   currentY += (mouseY - currentY) * 0.12;
 
-  if (glow) {
-    glow.style.transform = `
-      translate(${currentX}px, ${currentY}px)
-      translate(-50%, -50%)
-    `;
-  }
+  glow.style.transform =
+    `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
 
-  requestAnimationFrame(cursorAnimate);
+  requestAnimationFrame(animateCursor);
 }
 
-// ★ここが重要：最後に呼ぶ
-cursorAnimate();
+animateCursor();
 
 // =========================
 // LIGHTBOX
