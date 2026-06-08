@@ -1,5 +1,5 @@
 //////////////////////////////
-// ① loadingタイル生成
+// loading tiles
 //////////////////////////////
 window.addEventListener("DOMContentLoaded", () => {
   const grid = document.getElementById("loading-grid");
@@ -7,18 +7,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const cols = 12;
   const rows = 20;
-  const count = cols * rows;
 
-  for (let i = 0; i < count; i++) {
+  for (let i = 0; i < cols * rows; i++) {
     const tile = document.createElement("div");
     tile.className = "tile";
     grid.appendChild(tile);
   }
 });
 
-
 //////////////////////////////
-// ② スクロール値管理（統合）
+// scroll
 //////////////////////////////
 let scrollY = 0;
 
@@ -26,47 +24,36 @@ window.addEventListener("scroll", () => {
   scrollY = window.scrollY;
 });
 
-
 //////////////////////////////
-// ③ smooth header（rAF統合）
+// header animation
 //////////////////////////////
 const header = document.querySelector("header");
-
 let current = 0;
 
 function animate() {
-  if (!header) return;
+  if (header) {
+    current += (scrollY - current) * 0.1;
+    const progress = Math.min(current / 200, 1);
 
-  current += (scrollY - current) * 0.1;
+    header.classList.toggle("shrink", scrollY > 50);
 
-  const progress = Math.min(current / 200, 1);
+    header.style.background =
+      `rgba(255,255,255,${0.45 + progress * 0.25})`;
 
-  // shrink代替（統合）
-  if (scrollY > 50) {
-    header.classList.add("shrink");
-  } else {
-    header.classList.remove("shrink");
+    header.style.transform = `
+      scale(${1 - progress * 0.05})
+      translateY(${progress * -4}px)
+    `;
   }
-
-  // ガラス濃度
-  header.style.background = `rgba(255,255,255,${0.45 + progress * 0.25})`;
-
-  // transformアニメ
-  header.style.transform = `
-    scale(${1 - progress * 0.05})
-    translateY(${progress * -4}px)
-  `;
 
   requestAnimationFrame(animate);
 }
-
 animate();
 
-
 //////////////////////////////
-// ④ IntersectionObserver
+// fade observer
 //////////////////////////////
-const observer = new IntersectionObserver((entries, observer) => {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
@@ -75,13 +62,10 @@ const observer = new IntersectionObserver((entries, observer) => {
   });
 });
 
-document.querySelectorAll(".fade").forEach(el => {
-  observer.observe(el);
-});
-
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
 
 //////////////////////////////
-// ⑤ loadingアニメ
+// loading remove
 //////////////////////////////
 window.addEventListener("load", () => {
   const loading = document.getElementById("loading");
@@ -90,74 +74,59 @@ window.addEventListener("load", () => {
   if (!loading) return;
 
   tiles.forEach((tile, i) => {
-    setTimeout(() => {
-      tile.classList.add("hide");
-    }, i * 15);
+    setTimeout(() => tile.classList.add("hide"), i * 15);
   });
 
   setTimeout(() => {
     loading.style.opacity = "0";
-    loading.style.transition = "0.6s";
-
-    setTimeout(() => {
-      loading.remove();
-    }, 600);
+    setTimeout(() => loading.remove(), 600);
   }, 900);
 });
 
-// =========================
-// CURSOR
-// =========================
-
-const glow = document.querySelector('.cursor-glow');
+//////////////////////////////
+// cursor
+//////////////////////////////
+const glow = document.querySelector(".cursor-glow");
 
 let mouseX = 0;
 let mouseY = 0;
-let currentX = 0;
-let currentY = 0;
+let cx = 0;
+let cy = 0;
 
-document.addEventListener('mousemove', (e) => {
+document.addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 });
 
-function animateCursor(){
-  currentX += (mouseX - currentX) * 0.12;
-  currentY += (mouseY - currentY) * 0.12;
+function animateCursor() {
+  cx += (mouseX - cx) * 0.12;
+  cy += (mouseY - cy) * 0.12;
 
-  glow.style.transform =
-    `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+  if (glow) {
+    glow.style.transform =
+      `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
+  }
 
   requestAnimationFrame(animateCursor);
 }
-
 animateCursor();
 
-// =========================
-// LIGHTBOX
-// =========================
+//////////////////////////////
+// lightbox
+//////////////////////////////
+const images = document.querySelectorAll(".work-images img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
 
-const images = document.querySelectorAll('.work-images img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-
-if(lightbox){
-
+if (lightbox) {
   images.forEach(img => {
-
-    img.addEventListener('click', () => {
-
+    img.addEventListener("click", () => {
       lightboxImg.src = img.src;
-      lightbox.classList.add('show');
-
+      lightbox.classList.add("show");
     });
-
   });
 
-  lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('show');
+  lightbox.addEventListener("click", () => {
+    lightbox.classList.remove("show");
   });
-
 }
-
-
