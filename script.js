@@ -215,31 +215,36 @@ window.addEventListener("load", () => {
 // =========================
 // CURSOR
 // =========================
-
+window.addEventListener("DOMContentLoaded", () => {
 const glow = document.querySelector('.cursor-glow');
 
-let mouseX = 0;
-let mouseY = 0;
-let currentX = 0;
-let currentY = 0;
+if (glow) {
 
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
 
-function animate(){
-  // ぬるっと追従（遅延）
-  currentX += (mouseX - currentX) * 0.12;
-  currentY += (mouseY - currentY) * 0.12;
+  let currentX = mouseX;
+  let currentY = mouseY;
 
-  glow.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
 
-  requestAnimationFrame(animate);
+  function cursorAnimate() {
+    currentX += (mouseX - currentX) * 0.12;
+    currentY += (mouseY - currentY) * 0.12;
+
+    glow.style.transform = `
+      translate(${currentX}px, ${currentY}px)
+      translate(-50%, -50%)
+    `;
+
+    requestAnimationFrame(cursorAnimate);
+  }
+
+  cursorAnimate();
 }
-
-animate();
-
 
 // =========================
 // LIGHTBOX
