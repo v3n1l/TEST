@@ -218,33 +218,34 @@ window.addEventListener("load", () => {
 window.addEventListener("DOMContentLoaded", () => {
 const glow = document.querySelector('.cursor-glow');
 
-if (glow) {
+let mouseX = 0;
+let mouseY = 0;
+let currentX = 0;
+let currentY = 0;
 
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
+// マウス取得
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
 
-  let currentX = mouseX;
-  let currentY = mouseY;
+// アニメーション
+function cursorAnimate() {
+  currentX += (mouseX - currentX) * 0.12;
+  currentY += (mouseY - currentY) * 0.12;
 
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function cursorAnimate() {
-    currentX += (mouseX - currentX) * 0.12;
-    currentY += (mouseY - currentY) * 0.12;
-
+  if (glow) {
     glow.style.transform = `
       translate(${currentX}px, ${currentY}px)
       translate(-50%, -50%)
     `;
-
-    requestAnimationFrame(cursorAnimate);
   }
 
-  cursorAnimate();
+  requestAnimationFrame(cursorAnimate);
 }
+
+// ★ここが重要：最後に呼ぶ
+cursorAnimate();
 
 // =========================
 // LIGHTBOX
