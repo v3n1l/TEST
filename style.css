@@ -585,30 +585,35 @@ footer{
   top:50%;
   left:50%;
 
-  width:130px;
-  height:130px;
+  width:140px;
+  height:140px;
 
   transform:translate(-50%, -50%);
 
   border-radius:50%;
 
-  /* 中心のガラス */
-  background:rgba(106,171,210,.14);
+  /* 中心は薄く、外に向かって濃く */
+  background:radial-gradient(circle,
+    rgba(106,171,210,.05) 0%,
+    rgba(106,171,210,.10) 35%,
+    rgba(106,171,210,.18) 70%,
+    rgba(106,171,210,.22) 100%
+  );
 
-  /* ここがフチの“じゅわっ” */
+  /* ガウスっぽい“にじみ” */
+  filter:blur(6px);
+
+  /* 外側だけシャープ感残す */
   box-shadow:
-    0 0 0 1px rgba(106,171,210,.15),
-    0 0 18px rgba(106,171,210,.18),
-    0 0 40px rgba(106,171,210,.10);
-
-  backdrop-filter:blur(6px);
-  -webkit-backdrop-filter:blur(6px);
+    0 0 0 1px rgba(106,171,210,.12),
+    0 0 25px rgba(106,171,210,.18);
 
   opacity:0;
-  transition:.35s ease;
+  transition:.4s ease;
 
   pointer-events:none;
 }
+
 
 /* 画像サイズ統一 */
 .work-images img{
@@ -618,9 +623,10 @@ footer{
   display:block;
 }
 
-/* hoverで出現 */
+/* hoverで“ほどける” */
 .img-wrap:hover::after{
   opacity:1;
+  filter:blur(3px);
 }
 
 /* 区切り線 */
@@ -645,9 +651,12 @@ footer{
   position:fixed;
   inset:0;
 
-  background:rgba(255,255,255,.35);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
+  /* まずベースは透明白 */
+  background:rgba(255,255,255,.25);
+
+  /* 全体均一ぼかし */
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
 
   display:flex;
   justify-content:center;
@@ -656,31 +665,33 @@ footer{
   opacity:0;
   visibility:hidden;
 
-  transition:opacity .25s ease, backdrop-filter .25s ease;
+  transition:opacity .25s ease;
 
   z-index:9999;
 }
 
-/* 出現時 */
 #lightbox.show{
   opacity:1;
   visibility:visible;
 }
 
-/* 画像 */
+/* 画像は“くっきり主役” */
 #lightbox img{
-  max-width:95%;
-  max-height:95%;
+  max-width:92%;
+  max-height:92%;
 
-  border-radius:14px;
+  border-radius:16px;
 
-  transform:scale(.95);
-  transition:transform .25s ease, box-shadow .25s ease;
+  transform:scale(.96);
+  transition:.25s ease;
 
   box-shadow:
-    0 20px 60px rgba(0,0,0,.15);
+    0 30px 80px rgba(0,0,0,.18);
 }
 
+#lightbox.show img{
+  transform:scale(1);
+}
 #lightbox.show img{
   transform:scale(1);
 }
