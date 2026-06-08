@@ -557,8 +557,9 @@ footer{
 
 .work-title{
   font-size:16px;
-  font-weight:500;
-  color:#333;
+  font-weight:400;
+
+  color:#888;
 
   letter-spacing:.08em;
   margin-bottom:24px;
@@ -604,6 +605,7 @@ footer{
   margin-top:20px;
 
   padding-bottom:28px;
+  margin-bottom:36px; /* 追加 */
 
   border-bottom:1px solid rgba(0,0,0,.12);
 
