@@ -599,7 +599,7 @@ footer{
   opacity:0;
   visibility:hidden;
 
-  transition:.3s ease;
+  transition:opacity .25s ease;
 
   z-index:9999;
 }
@@ -612,9 +612,16 @@ footer{
 #lightbox img{
   max-width:95%;
   max-height:95%;
+
   border-radius:12px;
+
+  transform:scale(.95);
+  transition:transform .25s ease;
 
   box-shadow:
     0 20px 60px rgba(0,0,0,.4);
 }
 
+#lightbox.show img{
+  transform:scale(1);
+}
