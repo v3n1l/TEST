@@ -594,13 +594,15 @@ footer{
 .work-images img:hover{
   transform:translateY(-2px);
 
-  filter:saturate(1.05);
+  filter:
+    brightness(1.02)
+    saturate(.75);
 
   box-shadow:
-0 0 0 1px rgba(106,171,210,.3),
-0 10px 30px rgba(106,171,210,.22)
-     
-  opacity:.92;
+    0 0 0 1px rgba(106,171,210,.35),
+    0 10px 30px rgba(106,171,210,.25);
+
+  opacity:.9;
 }
 
 /* 区切り線 */
