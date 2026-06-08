@@ -8,8 +8,10 @@
 }
 
 body{
+  font-family:'Noto Sans JP', sans-serif;
+
   background:#fff;
-     opacity:0;
+  opacity:0;
   animation:pageFade 0.6s ease forwards;
 }
 
