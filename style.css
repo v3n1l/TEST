@@ -559,12 +559,16 @@ footer{
 
   cursor:pointer;
 
-  transition:.3s ease;
+  transition:.25s ease;
 }
 
 .work-images img:hover{
-  transform:scale(1.03);
+  opacity:.9;
+
+  box-shadow:
+    0 8px 24px rgba(106,171,210,.18);
 }
+
 /* 区切り線 */
 .work-desc{
   margin-top:8px;
