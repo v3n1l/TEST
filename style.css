@@ -553,19 +553,21 @@ footer{
 
 /* 画像サイズ統一 */
 .work-images img{
-  width:calc(33.333% - 8px);
-  aspect-ratio:1/1;
-  object-fit:cover;
-  border-radius:8px;
-  flex-shrink:0;
-
-  cursor:pointer;
-
   transition:
-    opacity .2s ease,
-    box-shadow .2s ease;
+    transform .25s ease,
+    box-shadow .25s ease,
+    opacity .25s ease;
 }
 
+.work-images img:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 0 0 1px rgba(106,171,210,.2),
+    0 12px 32px rgba(106,171,210,.22);
+
+  opacity:.95;
+}
 .work-images img:hover{
   opacity:.9;
 
