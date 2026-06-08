@@ -559,7 +559,7 @@ footer{
 
   cursor:pointer;
 
-  transition:.25s ease;
+  transition:opacity .2s ease;
 }
 
 .work-images img:hover{
