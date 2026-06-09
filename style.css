@@ -274,80 +274,138 @@ section{
 }
 
 /* =========================
-   ABOUT / PROFILE 3D
+ABOUT / PROFILE
 ========================= */
+
 .about-content{
-  display:flex;
-  gap:40px;
-  align-items:center;
+display:flex;
+gap:40px;
+align-items:center;
 }
 
 .profile-info{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
 .profile-info p{
-  font-size:15px;
-  line-height:1.9;
-  color:#444;
+font-size:15px;
+line-height:1.9;
+color:#444;
 }
 
 .profile-role{
-  font-size:12px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-
-   color:rgba(106,171,210,.8);
-
-  margin-bottom:28px;
+font-size:12px;
+letter-spacing:.18em;
+text-transform:uppercase;
+color:rgba(106,171,210,.8);
+margin-bottom:28px;
 }
 
 .profile-name{
-  font-size:42px;
-  font-weight:200;
-  letter-spacing:.08em;
-  line-height:1;
-
-  color:#222;
-
-  margin-bottom:8px;
+font-size:42px;
+font-weight:200;
+letter-spacing:.08em;
+line-height:1;
+color:#222;
+margin-bottom:8px;
 }
 
 .about-content p{
-  line-height:1.8;
+line-height:1.8;
 }
 
+/* =========================
+PROFILE ICON
+========================= */
 
-.profile-3d{
-  width:160px;
-  height:160px;
+## /*
 
-  border-radius:50%;
-  overflow:hidden;
+## 将来3Dモデルに戻す場合
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+HTML
 
-  background:rgba(255,255,255,.55);
+<div class="profile-3d">
 
-  backdrop-filter:blur(10px);
+<model-viewer
+ src="models/profile.glb"
+ auto-rotate
+ auto-rotate-delay="0"
+ rotation-per-second="8deg"
+ camera-controls="false"
+ disable-zoom
+ disable-pan
+ disable-tap
+ interaction-prompt="none"> </model-viewer>
 
-  border:1px solid rgba(106,171,210,.18);
+</div>
 
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.05),
-    inset 0 1px 0 rgba(255,255,255,.7);
-}
+CSS
 
 .profile-3d model-viewer{
-  width:75%;
-  height:75%;
+width:75%;
+height:75%;
+background:transparent;
+--poster-color:transparent;
+}
 
-  background:transparent;
-  --poster-color:transparent;
+---
+
+*/
+
+.profile-3d{
+width:180px;
+height:180px;
+
+position:relative;
+
+border-radius:50%;
+overflow:hidden;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:rgba(255,255,255,.45);
+
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.6);
+
+box-shadow:
+0 20px 50px rgba(106,171,210,.12),
+inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+/* ガラス反射 */
+
+.profile-3d::before{
+content:"";
+position:absolute;
+inset:0;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.45),
+rgba(255,255,255,0)
+);
+
+pointer-events:none;
+}
+
+/* アイコン画像 */
+
+.profile-3d img{
+width:100%;
+height:100%;
+object-fit:cover;
+
+border-radius:50%;
 }
 
 
