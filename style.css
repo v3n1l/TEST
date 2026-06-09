@@ -317,40 +317,37 @@ line-height:1.8;
 }
 
 /* =========================
-PROFILE ICON
+   PROFILE ICON
 ========================= */
 
-## /*
+/*
 
-## 将来3Dモデルに戻す場合
+将来3Dモデルに戻す場合
 
 HTML
 
 <div class="profile-3d">
-
-<model-viewer
- src="models/profile.glb"
- auto-rotate
- auto-rotate-delay="0"
- rotation-per-second="8deg"
- camera-controls="false"
- disable-zoom
- disable-pan
- disable-tap
- interaction-prompt="none"> </model-viewer>
-
+  <model-viewer
+    src="models/profile.glb"
+    auto-rotate
+    auto-rotate-delay="0"
+    rotation-per-second="8deg"
+    camera-controls="false"
+    disable-zoom
+    disable-pan
+    disable-tap
+    interaction-prompt="none">
+  </model-viewer>
 </div>
 
 CSS
 
 .profile-3d model-viewer{
-width:75%;
-height:75%;
-background:transparent;
---poster-color:transparent;
+  width:75%;
+  height:75%;
+  background:transparent;
+  --poster-color:transparent;
 }
-
----
 
 */
 
