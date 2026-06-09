@@ -353,13 +353,15 @@ CSS
 
 */
 
-.profile-3d{
+.profile-icon{
   width:180px;
   height:180px;
 
+  padding:12px;
+
   position:relative;
 
-  border-radius:50%;
+  border-radius:32px;
   overflow:hidden;
 
   display:flex;
@@ -378,12 +380,12 @@ CSS
     inset 0 1px 0 rgba(255,255,255,.8);
 }
 
-.profile-3d::before{
+.profile-icon::before{
   content:"";
   position:absolute;
   inset:0;
 
-  border-radius:50%;
+  border-radius:32px;
 
   background:
     linear-gradient(
@@ -395,14 +397,13 @@ CSS
   pointer-events:none;
 }
 
-.profile-3d img{
+.profile-icon img{
   width:100%;
   height:100%;
-  object-fit:cover;
-  border-radius:50%;
+
+  object-fit:contain;
+  border-radius:24px;
 }
-
-
 /* =========================
    SKILLS
 ========================= */
