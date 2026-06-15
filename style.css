@@ -1429,175 +1429,53 @@ footer{
 
 }
 
-/* =========================
-   package.html
-========================= */
 
-.work-detail{
-  max-width:900px;
-  margin:auto;
-  padding:120px 24px;
-}
-
-.work-detail h2{
-  margin-bottom:60px;
-}
-
-.work-block{
-  margin-bottom:80px;
-}
-
-.work-title{
-  font-size:16px;
-  font-weight:400;
-  color:#888;
-  letter-spacing:.08em;
-  margin-bottom:24px;
-}
-
-/* 画像横並び */
-.work-images{
-  display:flex;
-  gap:12px;
-  overflow-x:auto;
-}
-
-.img-wrap{
-  position:relative;
-  cursor:pointer;
-  width:calc(33.333% - 8px);
-  flex-shrink:0;
-  border-radius:8px;
-  overflow:hidden;
-}
 
 /* =========================
-   円形オーバーレイ（じゅわっと版）
+   graphic.html
 ========================= */
-.img-wrap::after{
-  content:"";
-  position:absolute;
-  top:50%;
-  left:50%;
 
-  width:200px;
-  height:200px;
-
-  transform:translate(-50%, -50%) scale(0.92);
-
-  border-radius:50%;
-
-  /* 色を少し濃く */
-  background:rgba(106,171,210,.20);
-
-  /* ぼかし範囲を広げて“空気感”増やす */
-  -webkit-mask-image:radial-gradient(circle,
-    rgba(0,0,0,1) 30%,
-    rgba(0,0,0,.7) 55%,
-    rgba(0,0,0,.25) 70%,
-    rgba(0,0,0,0) 85%
-  );
-
-  mask-image:radial-gradient(circle,
-    rgba(0,0,0,1) 30%,
-    rgba(0,0,0,.7) 55%,
-    rgba(0,0,0,.25) 70%,
-    rgba(0,0,0,0) 85%
-  );
-
-  /* しっかりガラス感 */
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-
-  /* ふちの存在感アップ */
-  box-shadow:
-    0 0 0 1px rgba(106,171,210,.18),
-    0 0 30px rgba(106,171,210,.18),
-    0 10px 60px rgba(106,171,210,.12);
-
-  opacity:0;
-  transition:.45s ease;
-
-  pointer-events:none;
+.graphic-grid{
+  columns:3;
+  column-gap:20px;
 }
 
-.img-wrap:hover::after{
-  opacity:1;
-  transform:translate(-50%, -50%) scale(1);
-}
-
-
-/* 画像サイズ統一 */
-.work-images img{
+.graphic-grid img{
   width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
   display:block;
+
+  margin-bottom:20px;
+
+  border-radius:12px;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    opacity .25s ease;
+
+  cursor:pointer;
 }
 
-/* 区切り線 */
-.work-desc{
-  margin-top:20px;
-  padding-bottom:28px;
-  margin-bottom:36px;
-
-  border-bottom:1px solid rgba(0,0,0,.12);
-
-  font-size:13px;
-  line-height:1.9;
-  color:#444;
-}
-
-
-/* =========================
-   LIGHTBOX
-========================= */
-
-#lightbox{
-  position:fixed;
-  inset:0;
-
-  /* まずベースは透明白 */
-  background:rgba(255,255,255,.25);
-
-  /* 全体均一ぼかし */
-  backdrop-filter:blur(22px);
-  -webkit-backdrop-filter:blur(22px);
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  opacity:0;
-  visibility:hidden;
-
-  transition:opacity .25s ease;
-
-  z-index:9999;
-}
-
-#lightbox.show{
-  opacity:1;
-  visibility:visible;
-}
-
-/* 画像は“くっきり主役” */
-#lightbox img{
-  max-width:92%;
-  max-height:92%;
-
-  border-radius:16px;
-
-  transform:scale(.96);
-  transition:.25s ease;
+.graphic-grid img:hover{
+  transform:translateY(-4px);
 
   box-shadow:
-    0 30px 80px rgba(0,0,0,.18);
+    0 0 0 1px rgba(106,171,210,.2),
+    0 12px 32px rgba(106,171,210,.22);
+
+  opacity:.95;
 }
 
-#lightbox.show img{
-  transform:scale(1);
+/* タブレット */
+@media(max-width:900px){
+  .graphic-grid{
+    columns:2;
+  }
 }
-#lightbox.show img{
-  transform:scale(1);
+
+/* スマホ */
+@media(max-width:600px){
+  .graphic-grid{
+    columns:1;
+  }
 }
