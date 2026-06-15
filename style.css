@@ -1437,17 +1437,14 @@ footer{
 
 .graphic-grid{
   columns:3;
-  column-gap:24px;
-
-  max-width:1000px;
-  margin:0 auto;
+  column-gap:20px;
 }
 
 .graphic-grid img{
   width:100%;
   display:block;
 
-  margin-bottom:24px;
+  margin-bottom:20px;
 
   border-radius:12px;
 
@@ -1471,12 +1468,14 @@ footer{
   opacity:.95;
 }
 
+/* tablet */
 @media(max-width:900px){
   .graphic-grid{
     columns:2;
   }
 }
 
+/* mobile */
 @media(max-width:600px){
   .graphic-grid{
     columns:1;
