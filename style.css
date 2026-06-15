@@ -1437,23 +1437,28 @@ footer{
 
 .graphic-grid{
   columns:3;
-  column-gap:20px;
+  column-gap:24px;
+
+  max-width:1000px;
+  margin:0 auto;
 }
 
 .graphic-grid img{
   width:100%;
   display:block;
 
-  margin-bottom:20px;
+  margin-bottom:24px;
 
   border-radius:12px;
+
+  break-inside:avoid;
+
+  cursor:pointer;
 
   transition:
     transform .25s ease,
     box-shadow .25s ease,
     opacity .25s ease;
-
-  cursor:pointer;
 }
 
 .graphic-grid img:hover{
@@ -1466,14 +1471,12 @@ footer{
   opacity:.95;
 }
 
-/* タブレット */
 @media(max-width:900px){
   .graphic-grid{
     columns:2;
   }
 }
 
-/* スマホ */
 @media(max-width:600px){
   .graphic-grid{
     columns:1;
