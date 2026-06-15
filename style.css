@@ -805,54 +805,104 @@ footer{
    graphic.html
 ========================= */
 
-.graphic-grid{
-  columns:3;
-  column-gap:20px;
+.work-detail{
+  max-width:1400px;
+  margin:auto;
+  padding:120px 40px;
 }
 
-.graphic-grid img{
+/* Pinterest風 */
+.graphic-grid{
+  columns:2;
+  column-gap:28px;
+}
+
+/* 画像ラッパー */
+.graphic-grid .img-wrap{
+  position:relative;
+
   width:100%;
-  display:block;
+  margin-bottom:28px;
 
-  margin-bottom:20px;
+  break-inside:avoid;
 
-  border-radius:12px;
+  border-radius:16px;
+  overflow:hidden;
 
   cursor:pointer;
+}
+
+/* 画像 */
+.graphic-grid img{
+  width:100%;
+  height:auto;
+
+  display:block;
+
+  border-radius:16px;
 
   transition:
     transform .25s ease,
-    box-shadow .25s ease,
     opacity .25s ease;
 }
 
-.graphic-grid .img-wrap{
-  position:relative;
-  overflow:hidden;
-  border-radius:12px;
-  margin-bottom:20px;
-  break-inside:avoid;
+/* Packageよりかなり弱め */
+.graphic-grid .img-wrap::after{
+  content:"";
+
+  position:absolute;
+  top:50%;
+  left:50%;
+
+  width:140px;
+  height:140px;
+
+  border-radius:50%;
+
+  background:rgba(106,171,210,.12);
+
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+
+  transform:
+    translate(-50%,-50%)
+    scale(.9);
+
+  opacity:0;
+
+  transition:.35s ease;
+
+  pointer-events:none;
 }
 
-.graphic-grid img:hover{
-  transform:translateY(-4px);
-
-  box-shadow:
-    0 0 0 1px rgba(106,171,210,.2),
-    0 12px 32px rgba(106,171,210,.22);
-
-  opacity:.95;
+/* hover */
+.graphic-grid .img-wrap:hover::after{
+  opacity:.8;
+  transform:
+    translate(-50%,-50%)
+    scale(1);
 }
 
+.graphic-grid .img-wrap:hover img{
+  transform:scale(1.01);
+  opacity:.96;
+}
+
+/* tablet */
 @media(max-width:900px){
   .graphic-grid{
     columns:2;
   }
 }
 
+/* mobile */
 @media(max-width:600px){
   .graphic-grid{
     columns:1;
+  }
+
+  .work-detail{
+    padding:120px 24px;
   }
 }
 
