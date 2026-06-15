@@ -114,19 +114,32 @@ animateCursor();
 //////////////////////////////
 // lightbox
 //////////////////////////////
-const images = document.querySelectorAll(".work-images img");
+
+const images = document.querySelectorAll(
+  ".work-images img, .graphic-grid img"
+);
+
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 
 if (lightbox) {
+
   images.forEach(img => {
+
     img.addEventListener("click", () => {
+
       lightboxImg.src = img.src;
-      lightbox.classList.add("show");
+
+      requestAnimationFrame(() => {
+        lightbox.classList.add("show");
+      });
+
     });
+
   });
 
   lightbox.addEventListener("click", () => {
     lightbox.classList.remove("show");
   });
+
 }
