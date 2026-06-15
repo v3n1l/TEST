@@ -1448,8 +1448,6 @@ footer{
 
   border-radius:12px;
 
-  break-inside:avoid;
-
   cursor:pointer;
 
   transition:
@@ -1468,14 +1466,12 @@ footer{
   opacity:.95;
 }
 
-/* tablet */
 @media(max-width:900px){
   .graphic-grid{
     columns:2;
   }
 }
 
-/* mobile */
 @media(max-width:600px){
   .graphic-grid{
     columns:1;
