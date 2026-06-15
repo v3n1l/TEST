@@ -1456,6 +1456,14 @@ footer{
     opacity .25s ease;
 }
 
+.graphic-grid .img-wrap{
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  margin-bottom:20px;
+  break-inside:avoid;
+}
+
 .graphic-grid img:hover{
   transform:translateY(-4px);
 
