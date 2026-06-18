@@ -255,20 +255,21 @@ section{
 }
 
 .hero{
+  max-width:none;
+  width:100%;
+
   height:100vh;
 
   display:flex;
   flex-direction:column;
   justify-content:center;
 
-  position:relative;
-
   background:
     linear-gradient(
-      rgba(0,0,0,.28),
-      rgba(0,0,0,.28)
+      rgba(0,0,0,.25),
+      rgba(0,0,0,.25)
     ),
-    url("images/Top.webp");
+    url("./images/Top.webp");
 
   background-size:cover;
   background-position:center;
@@ -276,24 +277,13 @@ section{
 }
 
 .hero h1{
-  margin-bottom:32px;
-
   color:#fff;
-
-  text-shadow:
-    0 4px 20px rgba(0,0,0,.25);
+  text-shadow:0 4px 20px rgba(0,0,0,.25);
 }
 
 .hero p{
-  margin-top:20px;
-
-  font-size:16px;
-  letter-spacing:.25em;
-
   color:rgba(255,255,255,.9);
-
-  text-shadow:
-    0 2px 10px rgba(0,0,0,.25);
+  text-shadow:0 2px 10px rgba(0,0,0,.25);
 }
 
 /* =========================
