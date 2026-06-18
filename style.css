@@ -285,11 +285,11 @@ section{
 .hero h1{
   margin-bottom:12px;
 
-  font-family:'Josefin Sans', sans-serif;
+  font-family:'Fredoka', sans-serif;
 
-  font-size:68px;
-  font-weight:300;
-  letter-spacing:.06em;
+  font-size:64px;
+  font-weight:400;
+  letter-spacing:.03em;
   line-height:1.05;
 
   color:#fff;
