@@ -285,9 +285,12 @@ section{
 .hero h1{
   margin-bottom:12px;
 
-  font-size:56px;
+  font-family:'Josefin Sans', sans-serif;
+
+  font-size:68px;
   font-weight:300;
-  letter-spacing:.08em;
+  letter-spacing:.06em;
+  line-height:1.05;
 
   color:#fff;
 
@@ -315,10 +318,9 @@ section{
     background-position:65% center;
   }
 
-  .hero h1{
-    font-size:38px;
-  }
-
+.hero h1{
+  font-size:48px;
+}
   .hero p{
     font-size:13px;
   }
