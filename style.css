@@ -8,7 +8,7 @@
 }
 
 body{
-  font-family:'Noto Sans JP', sans-serif;
+  font-family:'Fredoka', sans-serif;
   background:#fff;
   opacity:0;
   animation:pageFade 0.6s ease forwards;
@@ -94,7 +94,7 @@ h2{
 .work-title,
 .skills h3{
   font-size:12px;
-  font-weight:400;
+  font-weight:300;
   letter-spacing:.2em;
   text-transform:uppercase;
   color:#888;
@@ -469,7 +469,7 @@ CSS
 
 .skills h3{
   font-size:12px;
-  font-weight:400;
+  font-weight:300;
   letter-spacing:.2em;
   color:#888;
   margin-bottom:40px;
@@ -479,7 +479,7 @@ CSS
   font-size:12px;
   letter-spacing:.2em;
   color:#888;
-  font-weight:400;
+  font-weight:300;
   text-align:center;
 
   margin-bottom:40px;
@@ -562,6 +562,11 @@ CSS
   color:rgba(106,171,210,.9);
 }
 
+.work-title{
+  font-weight:300;
+}
+
+
 /* =========================
    PRODUCT GRID
 ========================= */
@@ -596,6 +601,7 @@ CSS
 
 .product-name{
   font-size:12px;
+  font-weight:300;   
   letter-spacing:.08em;
   color:#333;
 }
